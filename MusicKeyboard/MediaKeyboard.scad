@@ -46,6 +46,14 @@ module cap() {
   }
 }
 
+module strut() {
+  difference() {
+    cube([boxW-(wallT+clearance)*2, boxD-(wallT+clearance)*2, boardH]);
+    translate([wallT*4, boxD-(wallT+clearance)*2-wallT*3, -1])
+    cube([boxW-(wallT+clearance)*2-wallT*8, wallT*3+1, boardH+2]);
+  }
+}
+
 
 module board() {
   color("Purple")
@@ -124,9 +132,11 @@ module capVolumeUp() {
 }
 
 
-!mediaKeyboardBox();
+mediaKeyboardBox();
 translate([wallT+clearance, wallT*2+clearance, wallT+clearance])
   board();
+%translate([wallT+clearance, wallT+clearance, switchZ])
+  !strut();
 for ( i = [1 : 1 : switchNumber] ) {
   translate([wallT+clearance+(capW-switchW)/2+(i-1)*(capW+clearance),
               (boxD-switchD)/2,
