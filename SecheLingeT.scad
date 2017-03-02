@@ -1,8 +1,8 @@
 // T séchoir
 $fn = 60;
 wallT = 3;
-length = 25;
-pipeOD = 10;
+length = 35;
+pipeOD = 15;
 clear = 0.2;
 
 use <MCAD/boxes.scad>
