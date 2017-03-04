@@ -29,15 +29,15 @@ module magnetHolder() {
         translate([holderW/2, magnetD/2, -1])
             cylinder(r=magnetID/2-clearance, h=holderH+2);
         // Remove - Back
-        translate([-1, holderD/2, wallT])
+        translate([-1, holderD*2/3, wallT])
             cube([holderW+2, holderD, holderH]);
         // Remove - Holder screws
-        translate( [wallT, holderD*3/4, -1])hull(){
+        translate( [wallT, holderD*4/5, -1])hull(){
             cylinder(r=screwOD/2+clearance, h=holderH+2);
             translate([wallT, 0, 0])
                 cylinder(r=screwOD/2+clearance, h=holderH+2);
         }
-        translate( [holderW-wallT*2, holderD*3/4, -1])hull(){
+        translate( [holderW-wallT*2, holderD*4/5, -1])hull(){
             cylinder(r=screwOD/2+clearance, h=holderH+2);
             translate([wallT, 0, 0])
                 cylinder(r=screwOD/2+clearance, h=holderH+2);
